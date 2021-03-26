@@ -5,7 +5,17 @@
         <img src="/img/logo-left.svg" alt="" />
         <img src="/img/logo-right.svg" alt="" class="ml-2" />
       </div>
-      <div class="home-page__left-middle">
+
+      <div class="home-page__left-bottom">
+        <h2>
+          Sign In to your account
+        </h2>
+
+        <p>
+          Sign in now to access your account with the data you entered during
+          your registration
+        </p>
+
         <b-form
           @submit="onSubmit"
           @reset="onReset"
@@ -16,6 +26,7 @@
             id="input-group-1"
             label="Email address:"
             label-for="input-1"
+            class="mt-4"
           >
             <b-form-input
               id="input-1"
@@ -30,6 +41,7 @@
             id="input-group-2"
             label="Password:"
             label-for="input-2"
+            class="mt-4"
           >
             <b-form-input
               id="input-2"
@@ -40,17 +52,34 @@
             ></b-form-input>
           </b-form-group>
 
-          <b-button type="submit" variant="primary">Login</b-button>
+          <div class="aspace-between align-center mt-4">
+            <b-form-checkbox
+              id="checkbox-1"
+              v-model="form.keepLoggedIn"
+              name="checkbox-1"
+            >
+              I accept the terms and use
+            </b-form-checkbox>
+
+            <b-link class="text-link">
+              Forgot password?
+            </b-link>
+          </div>
+
+          <the-button block class="mt-4">Sign In</the-button>
+          <!-- <b-button type="submit" variant="primary">Login</b-button> -->
         </b-form>
-      </div>
-      <div class="home-page__left-bottom">
-        <p>
-          Don’t have an accont? Register
+        <p class="text-center mt-4">
+          Don’t have an account? <b-link to="#"> Register</b-link>
         </p>
       </div>
     </div>
 
-    <div class="home-page__right"></div>
+    <div class="home-page__right">
+      <div class="home-page__right-container">
+        <div class="white-card"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -63,7 +92,8 @@ export default {
     return {
       form: {
         email: "",
-        password: ""
+        password: "",
+        keepLoggedIn: false
       },
       foods: [
         { text: "Select One", value: null },
@@ -116,31 +146,39 @@ export default {
 
 .home-page__left {
   background: #e5e5e5;
-  width: 463px;
+  width: 525px;
   display: flex;
   flex-direction: column;
+  padding: 40px 60px;
 }
 
 .home-page__left-top {
-  padding: 30px 20px;
   display: flex;
   align-items: center;
 }
-.home-page__left-middle {
-  padding: 20px 64px;
+.home-page__left-bottom {
+  /* text-align: center; */
+  padding-top: 100px;
+}
+.home-page__right {
+  display: flex;
   flex: 1;
+  background-color: #eb0a1e;
+  background-image: url("/img/bgs/Mask-Group.svg");
+  background-size: 100% 100%;
   overflow-y: auto;
 }
-.home-page__left-bottom {
-  padding: 20px 64px;
-  text-align: center;
-}
-.home-page__right {
+
+.home-page__right-container {
+  margin: auto;
+  width: 98%;
+  max-width: 512px;
 }
 
-.home-page__right {
-  flex: 1;
-  background: gray;
+.white-card {
+  background: #ffffff;
+  border-radius: 30px;
+  min-height: 300px;
 }
 
 .login-form {

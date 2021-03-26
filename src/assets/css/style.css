@@ -1,3 +1,87 @@
+@font-face {
+  font-family: "ToyotaType";
+  src: url("/fonts/toyota-type/@font-face/5ed8da50826369dfd20fd9e532593c99.eot"); /* IE9*/
+  src: url("/fonts/toyota-type/@font-face/5ed8da50826369dfd20fd9e532593c99.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("/fonts/toyota-type/@font-face/5ed8da50826369dfd20fd9e532593c99.woff2")
+      format("woff2"),
+    /* chrome、firefox */
+      url("/fonts/toyota-type/@font-face/5ed8da50826369dfd20fd9e532593c99.woff")
+      format("woff"),
+    /* chrome、firefox */
+      url("/fonts/toyota-type/@font-face/5ed8da50826369dfd20fd9e532593c99.ttf")
+      format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("/fonts/toyota-type/@font-face/5ed8da50826369dfd20fd9e532593c99.svg#Toyota Type")
+      format("svg"); /* iOS 4.1- */
+}
+
 body {
+  font-family: ToyotaType;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 160%;
+  color: #3c3c3c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #3c3c3c;
+  font-family: ToyotaType;
+}
+
+/* h1 {
+  font-size: 26px;
+} */
+
+h2 {
+  font-size: 24px;
+  line-height: 34px;
+}
+/* 
+h3 {
+  font-size: 20px;
+}
+h3.smaller {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h5.normal {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+h6 {
   font-size: 12px;
+  line-height: 2;
+}
+
+.h7 {
+  font-weight: bold;
+  font-size: 10px;
+} */
+
+/*========== Links ============*/
+.text-link {
+  font-size: 12px;
+  line-height: 17px;
+  color: #58595b;
 }
