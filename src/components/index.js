@@ -1,7 +1,8 @@
 // Import vue components
 import MyHeader from "./MyHeader.vue";
 import MyFooter from "./MyFooter.vue";
-import TheButton from "./TheButton.vue";
+import TheButton from "./form/TheButton.vue";
+import TheInput from "./form/TheInput.vue";
 import HomeSlides from "./HomeSlides.vue";
 
 // font-awesome
@@ -12,6 +13,7 @@ export default {
     Vue.component("my-header", MyHeader);
     Vue.component("my-footer", MyFooter);
     Vue.component("the-button", TheButton);
+    Vue.component("the-input", TheInput);
     Vue.component("home-slides", HomeSlides);
 
     // font-awesome

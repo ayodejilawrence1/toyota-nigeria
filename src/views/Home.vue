@@ -7,50 +7,25 @@
       </div>
 
       <div class="home-page__left-bottom">
-        <h2>
-          Sign In to your account
-        </h2>
+        <form @submit="onSubmit" @reset="onReset">
+          <h2>
+            Sign In to your account
+          </h2>
 
-        <p>
-          Sign in now to access your account with the data you entered during
-          your registration
-        </p>
+          <p class="mt-3">
+            Sign in now to access your account with the data you entered during
+            your registration
+          </p>
 
-        <b-form
-          @submit="onSubmit"
-          @reset="onReset"
-          v-if="show"
-          class="login-form"
-        >
-          <b-form-group
-            id="input-group-1"
-            label="Email address:"
-            label-for="input-1"
-            class="mt-4"
-          >
-            <b-form-input
-              id="input-1"
-              v-model="form.email"
-              type="email"
-              required
-              placeholder="Enter email"
-            ></b-form-input>
-          </b-form-group>
+          <label class="mt-4">Email Address</label>
+          <the-input type="email" v-model="form.email"></the-input>
 
-          <b-form-group
-            id="input-group-2"
-            label="Password:"
-            label-for="input-2"
-            class="mt-4"
-          >
-            <b-form-input
-              id="input-2"
-              type="password"
-              v-model="form.password"
-              required
-              placeholder="Enter Password"
-            ></b-form-input>
-          </b-form-group>
+          <label class="mt-4">Password</label>
+          <the-input
+            type="password"
+            v-model="form.password"
+            showHide
+          ></the-input>
 
           <div class="aspace-between align-center mt-4">
             <b-form-checkbox
@@ -61,16 +36,17 @@
               Keep me signed in
             </b-form-checkbox>
 
-            <b-link class="text-link">
+            <b-link class="color-1">
               Forgot password?
             </b-link>
           </div>
 
           <the-button block class="mt-4">Sign In</the-button>
-          <!-- <b-button type="submit" variant="primary">Login</b-button> -->
-        </b-form>
+        </form>
+
         <p class="text-center mt-4">
-          Don’t have an account? <b-link to="#"> Register</b-link>
+          Don’t have an account?
+          <b-link to="#" class="color-1"> Register</b-link>
         </p>
       </div>
     </div>
@@ -80,15 +56,20 @@
         <!-- <div class="white-card"></div> -->
         <home-slides></home-slides>
       </div>
+
+      <img src="/img/bgs/top-right.svg" alt="" class="top-right-bg" />
+      <img src="/img/bgs/bottom-left.svg" alt="" class="bottom-left-bg" />
     </div>
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import TheInput from "../components/form/TheInput.vue";
 import * as types from "../store/types";
 
 export default {
+  components: { TheInput },
   data() {
     return {
       form: {
@@ -111,7 +92,9 @@ export default {
       login: types.LOGIN
     }),
     onSubmit(evt) {
-      evt.preventDefault();
+      if (evt) {
+        evt.preventDefault();
+      }
 
       let dummyData = {
         user: {
@@ -146,11 +129,12 @@ export default {
 }
 
 .home-page__left {
-  background: #e5e5e5;
+  background: #fff;
   width: 525px;
   display: flex;
   flex-direction: column;
   padding: 40px 60px;
+  overflow-y: auto;
 }
 
 .home-page__left-top {
@@ -165,9 +149,9 @@ export default {
   display: flex;
   flex: 1;
   background-color: #eb0a1e;
-  background-image: url("/img/bgs/Mask-Group.svg");
   background-size: 100% 100%;
   overflow-y: auto;
+  position: relative;
 }
 
 .home-page__right-container {
@@ -175,8 +159,19 @@ export default {
   width: 98%;
   max-width: 512px;
   padding: 22px 0;
+  z-index: 1;
 }
 
-.login-form {
+.top-right-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.bottom-left-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 </style>
