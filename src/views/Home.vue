@@ -58,7 +58,7 @@
               v-model="form.keepLoggedIn"
               name="checkbox-1"
             >
-              I accept the terms and use
+              Keep me signed in
             </b-form-checkbox>
 
             <b-link class="text-link">
@@ -77,7 +77,8 @@
 
     <div class="home-page__right">
       <div class="home-page__right-container">
-        <div class="white-card"></div>
+        <!-- <div class="white-card"></div> -->
+        <home-slides></home-slides>
       </div>
     </div>
   </div>
@@ -173,12 +174,7 @@ export default {
   margin: auto;
   width: 98%;
   max-width: 512px;
-}
-
-.white-card {
-  background: #ffffff;
-  border-radius: 30px;
-  min-height: 300px;
+  padding: 22px 0;
 }
 
 .login-form {
