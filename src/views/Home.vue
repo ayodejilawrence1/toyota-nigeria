@@ -1,12 +1,12 @@
 <template>
-  <div class="home-page">
-    <div class="home-page__left">
-      <div class="home-page__left-top">
+  <div class="default-page">
+    <div class="default-page__left">
+      <div class="default-page__left-top">
         <img src="/img/logo-left.svg" alt="" />
         <img src="/img/logo-right.svg" alt="" class="ml-2" />
       </div>
 
-      <div class="home-page__left-bottom">
+      <div class="default-page__left-bottom">
         <form @submit="onSubmit" @reset="onReset">
           <h2>
             Sign In to your account
@@ -46,13 +46,13 @@
 
         <p class="text-center mt-4">
           Don’t have an account?
-          <b-link to="#" class="color-1"> Register</b-link>
+          <b-link to="/register" class="color-1"> Register</b-link>
         </p>
       </div>
     </div>
 
-    <div class="home-page__right">
-      <div class="home-page__right-container">
+    <div class="default-page__right">
+      <div class="default-page__right-container">
         <!-- <div class="white-card"></div> -->
         <home-slides></home-slides>
       </div>
@@ -118,60 +118,4 @@ export default {
 };
 </script>
 
-<style>
-.home-page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-}
-
-.home-page__left {
-  background: #fff;
-  width: 525px;
-  display: flex;
-  flex-direction: column;
-  padding: 40px 60px;
-  overflow-y: auto;
-}
-
-.home-page__left-top {
-  display: flex;
-  align-items: center;
-}
-.home-page__left-bottom {
-  /* text-align: center; */
-  padding-top: 100px;
-}
-.home-page__right {
-  display: flex;
-  flex: 1;
-  background-color: #eb0a1e;
-  background-size: 100% 100%;
-  overflow-y: auto;
-  position: relative;
-}
-
-.home-page__right-container {
-  margin: auto;
-  width: 98%;
-  max-width: 512px;
-  padding: 22px 0;
-  z-index: 1;
-}
-
-.top-right-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 0;
-}
-
-.bottom-left-bg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-</style>
+<style></style>

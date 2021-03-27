@@ -77,7 +77,7 @@ export default {
   border-radius: 6px;
   width: 100%;
   background-color: transparent;
-  padding: 8px 11px;
+  padding: 9px 11px;
 }
 
 .the-input:focus {

@@ -1,5 +1,5 @@
 <template>
-  <carousel perPage="1">
+  <carousel :perPage="1">
     <slide>
       <div class="white-card">
         <h4 class="color-1">Standard Service Items</h4>
